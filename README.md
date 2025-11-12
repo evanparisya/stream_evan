@@ -14,3 +14,7 @@ A new Flutter project.
 **Soal 3**
 
 yield* colors adalah inti fungsinya. Perintah ini mengambil seluruh elemen dari daftar colors (yang berisi Colors.blueGrey, Colors.amber, dll.) dan secara otomatis mengirimkan setiap elemen tersebut satu per satu sebagai bagian dari stream yang dikembalikan.
+
+**Soal 4**
+
+<video controls src="20251112-0656-24.0037006.mp4" title="Title"></video>
