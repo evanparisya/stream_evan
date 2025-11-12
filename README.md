@@ -40,3 +40,17 @@ Langkah ini mengubah fungsionalitas tombol dari "tambah angka" menjadi "tambahka
 **Soal 8**
 <video controls src="20251112-1554-42.0427728.mp4" title="Title"></video>
 
+## Praktikum 4
+**Soal 9**
+<video controls src="20251112-1603-00.4712706.mp4" title="Title"></video>
+
+## Praktikum 5
+**Soal 10**
+![alt text](image-4.png)
+
+Error itu terjadi karena secara default, StreamController yang dibuat di kelas NumberStream adalah Stream Langganan Tunggal (Single-Subscription Stream).
+
+**Soal 11**
+
+Inti dari langkah 4 dan 5 adalah untuk memperbaiki error "Bad state: Stream has already been listened to" (Stream sudah pernah didengarkan).
+<video controls src="20251112-1614-56.1371844.mp4" title="Title"></video>
