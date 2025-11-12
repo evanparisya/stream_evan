@@ -34,13 +34,11 @@ class _StreamHomePageState extends State<StreamHomePage> {
   int lastNumber = 0; // Digunakan untuk .onError
   late StreamController numberStreamController;
   late NumberStream numberStream;
-  
-  // Variabel dari langkah sebelumnya
+
   late StreamSubscription subscription; 
   late StreamSubscription subscription2;
   String values = ''; 
 
-  // --- Metode Lifecycle ---
   @override
   void initState() {
     super.initState(); 
@@ -53,25 +51,20 @@ class _StreamHomePageState extends State<StreamHomePage> {
     numberStream = NumberStream();
     numberStreamController = numberStream.controller;
     
-    // LANGKAH 4: Set broadcast stream
-    // Mengubah stream menjadi broadcast agar bisa didengarkan >1x
     Stream stream = numberStreamController.stream.asBroadcastStream();
 
-    // Listener 1 (sekarang aman digunakan)
     subscription = stream.listen((event) {
       setState(() {
         values += '$event - '; // Menambahkan data ke string
       });
     });
 
-    // Listener 2 (sekarang aman digunakan)
     subscription2 = stream.listen((event) {
       setState(() {
         values += '$event - '; // Menambahkan data ke string
       });
     });
     
-    // Menerapkan logic .onError/onDone dari langkah sebelumnya
     subscription.onError((error) {
       setState(() {
         lastNumber = -1; // Menampilkan -1 jika ada error
@@ -89,8 +82,6 @@ class _StreamHomePageState extends State<StreamHomePage> {
     subscription2.cancel(); // Membatalkan subscription 2
     super.dispose();
   }
-  
-  // --- Metode Bisnis ---
   
   void changeColor() async {
     colorStream.getColors().listen((eventColor) {
@@ -117,7 +108,6 @@ class _StreamHomePageState extends State<StreamHomePage> {
     }
   }
 
-  // LANGKAH 5: Edit method build()
   @override
   Widget build(BuildContext context) {
     return Scaffold(
